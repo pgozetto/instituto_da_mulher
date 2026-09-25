@@ -1,0 +1,255 @@
+import Image from "next/image";
+import { BookingForm } from "./booking-form";
+import { ParallaxEffects } from "./parallax-effects";
+import { Typewriter } from "../components/ui/typewriter";
+
+const WHATSAPP_URL = "https://wa.me/5519996789337?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Instituto%20da%20Mulher%20de%20Piracicaba.";
+const ADDRESS_URL = "https://www.google.com/maps/search/?api=1&query=Avenida%20Independ%C3%AAncia%20950%20sala%20123%20Piracicaba%20SP";
+
+const services = [
+  {
+    icon: "✦",
+    title: "Ginecologia",
+    text: "Cuidado preventivo, exames de rotina e acompanhamento de cada fase da vida feminina.",
+  },
+  {
+    icon: "◌",
+    title: "Obstetrícia",
+    text: "Atenção acolhedora durante a gestação, com acompanhamento próximo para você e seu bebê.",
+  },
+  {
+    icon: "⌁",
+    title: "Psicologia",
+    text: "Um espaço seguro de escuta e apoio para a sua saúde emocional.",
+  },
+  {
+    icon: "⟡",
+    title: "Nutrição",
+    text: "Orientação nutricional individualizada para escolhas que façam sentido na sua rotina.",
+  },
+];
+
+const procedures = [
+  "Colocação e retirada de DIU",
+  "Implanon",
+  "Reposição hormonal",
+  "Exame preventivo (Papanicolau)",
+];
+
+export default function Home() {
+  return (
+    <main className="antialiased">
+      <ParallaxEffects />
+      <header className="site-header">
+        <a href="#inicio" className="brand" aria-label="Ir para o início">
+          <Image src="/images/logo.png" alt="Símbolo do Instituto da Mulher de Piracicaba" width={54} height={54} priority />
+          <span>
+            Instituto da Mulher
+            <small>de Piracicaba</small>
+          </span>
+        </a>
+        <nav className="desktop-nav" aria-label="Navegação principal">
+          <a href="#especialidades">Especialidades</a>
+          <a href="#sobre">O Instituto</a>
+          <a href="#estrutura">Estrutura</a>
+          <a href="#contato">Contato</a>
+        </nav>
+        <a className="button button-primary header-cta" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+          Agendar consulta
+          <ArrowIcon />
+        </a>
+      </header>
+
+      <section id="inicio" className="hero section-shell">
+        <div className="hero-copy">
+          <h1 aria-label="Seu cuidado merece atenção por inteiro.">
+            <span className="sr-only">Seu cuidado merece atenção por inteiro.</span>
+            <Typewriter words={["Seu cuidado merece atenção por inteiro."]} speed={72} delayBetweenWords={2600} />
+          </h1>
+          <p>
+            Uma clínica feita para acompanhar você com escuta, tecnologia e uma equipe que entende cada fase da vida feminina.
+          </p>
+          <div className="hero-actions">
+            <a className="button button-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
+              Agendar consulta
+              <ArrowIcon />
+            </a>
+            <a className="text-link" href="#especialidades">Conheça nossas especialidades <ArrowIcon /></a>
+          </div>
+        </div>
+        <div className="hero-visual">
+          <div className="hero-shape hero-shape-one" />
+          <div className="hero-shape hero-shape-two" />
+          <div className="hero-photo image-hover" data-parallax="0.045">
+            <Image
+              src="/images/equipe-medica.jpg"
+              alt="Profissional do Instituto da Mulher de Piracicaba na recepção da clínica"
+              fill
+              priority
+              sizes="(max-width: 900px) 90vw, 48vw"
+            />
+          </div>
+        </div>
+        <div className="hero-booking-card">
+          <div className="booking-heading">
+            <span className="eyebrow">Agende sua consulta</span>
+            <h2>Vamos cuidar de você.</h2>
+          </div>
+          <BookingForm compact />
+        </div>
+      </section>
+
+      <section id="especialidades" className="specialties section-shell section-space">
+        <div className="section-heading centered-heading">
+          <span className="eyebrow">Cuidado integrado</span>
+          <h2>Especialidades que se encontram por você.</h2>
+          <p>Uma equipe multidisciplinar para cuidar da sua saúde física e emocional de maneira completa.</p>
+        </div>
+        <div className="specialties-grid">
+          {services.map((service) => (
+            <article className="specialty-card" data-parallax="0.02" key={service.title}>
+              <span className="service-icon" aria-hidden="true">{service.icon}</span>
+              <h3>{service.title}</h3>
+              <p>{service.text}</p>
+              <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label={`Agendar ${service.title}`}>
+                Agendar <ArrowIcon />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="sobre" className="story-section section-space">
+        <div className="section-shell story-layout">
+          <div className="story-images">
+            <div className="story-main-image image-hover" data-parallax="0.04">
+              <Image src="/images/equipe-completa.png" alt="Equipe reunida no Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 90vw, 40vw" />
+            </div>
+            <div className="story-small-image image-hover" data-parallax="0.025">
+              <Image src="/images/consultorio.jpg" alt="Detalhe da estrutura do Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 42vw, 20vw" />
+            </div>
+          </div>
+          <div className="story-copy">
+            <span className="eyebrow">Nossa história</span>
+            <h2>Um espaço pensado para acolher todas as suas fases.</h2>
+            <p>
+              O Instituto da Mulher de Piracicaba nasceu de uma ideia simples: a saúde feminina merece um cuidado próximo, respeitoso e completo.
+            </p>
+            <p>
+              Reunimos especialidades, experiência e uma estrutura preparada para que cada consulta seja vivida com mais tranquilidade, clareza e confiança.
+            </p>
+            <a className="text-link" href="#contato">Venha conhecer o Instituto <ArrowIcon /></a>
+          </div>
+        </div>
+      </section>
+
+      <section className="care-section section-shell section-space">
+        <div className="care-photo image-hover" data-parallax="0.035">
+          <Image src="/images/recepcao.jpg" alt="Recepção acolhedora do Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 100vw, 52vw" />
+        </div>
+        <div className="care-copy">
+          <span className="eyebrow">Atendimentos e procedimentos</span>
+          <h2>Da prevenção ao acompanhamento, com atenção a você.</h2>
+          <p>Conte com uma clínica preparada para orientações, exames e tratamentos ginecológicos importantes para a sua jornada.</p>
+          <ul>
+            {procedures.map((procedure) => <li key={procedure}><CheckIcon />{procedure}</li>)}
+          </ul>
+          <a className="button button-outline" href={WHATSAPP_URL} target="_blank" rel="noreferrer">Tirar uma dúvida no WhatsApp <ArrowIcon /></a>
+        </div>
+      </section>
+
+      <section id="estrutura" className="gallery-section section-space">
+        <div className="section-shell">
+          <div className="gallery-header">
+            <div className="section-heading">
+              <span className="eyebrow">Conheça nosso espaço</span>
+              <h2>Um ambiente leve para você se sentir bem.</h2>
+            </div>
+            <p>Localizado em uma região de fácil acesso em Piracicaba, o Instituto foi pensado para oferecer conforto desde a chegada.</p>
+          </div>
+          <div className="gallery-grid">
+            <div className="gallery-item gallery-item-large image-hover" data-parallax="0.04"><Image src="/images/equipe-recepcao.jpg" alt="Profissional na recepção da clínica" fill sizes="(max-width: 900px) 100vw, 44vw" /></div>
+            <div className="gallery-item image-hover" data-parallax="0.025"><Image src="/images/recepcionista-1.jpg" alt="Atendimento na recepção do Instituto" fill sizes="(max-width: 900px) 50vw, 25vw" /></div>
+            <div className="gallery-item image-hover" data-parallax="0.035"><Image src="/images/recepcionista-2.jpg" alt="Equipe de atendimento do Instituto da Mulher" fill sizes="(max-width: 900px) 50vw, 25vw" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato" className="contact-section section-space">
+        <div className="section-shell contact-card" data-parallax="0.018">
+          <div className="contact-copy">
+            <span className="eyebrow eyebrow-light">Seu próximo passo pode ser agora</span>
+            <h2>Vamos conversar sobre o seu cuidado?</h2>
+            <p>Fale com a nossa equipe pelo WhatsApp e encontre o melhor horário para a sua consulta.</p>
+            <div className="contact-details">
+              <a href="tel:+5519996789337"><PhoneIcon />(19) 99678-9337</a>
+              <a href={ADDRESS_URL} target="_blank" rel="noreferrer"><PinIcon />Avenida Independência, 950, sala 123<br /><span>Piracicaba - SP, 13419-155</span></a>
+            </div>
+          </div>
+          <div className="contact-form-wrap">
+            <BookingForm />
+          </div>
+        </div>
+      </section>
+
+      <footer className="site-footer section-shell">
+        <div className="footer-brand">
+          <Image src="/images/logo.png" alt="" width={46} height={46} />
+          <span>Instituto da Mulher<small>de Piracicaba</small></span>
+        </div>
+        <p>Saúde feminina com escuta, confiança e acolhimento.</p>
+        <div className="social-links">
+          <a href="https://www.instagram.com/institutodamulherpiracicaba" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://web.facebook.com/institutodamulherdepiracicaba/" target="_blank" rel="noreferrer">Facebook</a>
+        </div>
+      </footer>
+
+      <a className="floating-whatsapp" href={WHATSAPP_URL} target="_blank" rel="noreferrer" aria-label="Agendar consulta pelo WhatsApp">
+        <WhatsAppIcon />
+        <span>Agendar consulta</span>
+      </a>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "MedicalClinic",
+            name: "Instituto da Mulher de Piracicaba",
+            description: "Clínica especializada em saúde da mulher em Piracicaba, com ginecologia, obstetrícia, psicologia e nutrição.",
+            telephone: "+55 19 99678-9337",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Avenida Independência, 950, sala 123",
+              addressLocality: "Piracicaba",
+              addressRegion: "SP",
+              postalCode: "13419-155",
+              addressCountry: "BR"
+            },
+            sameAs: ["https://www.instagram.com/institutodamulherpiracicaba", "https://web.facebook.com/institutodamulherdepiracicaba/"]
+          }),
+        }}
+      />
+    </main>
+  );
+}
+
+function ArrowIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3.75 10h12.5M10.75 4.5 16.25 10l-5.5 5.5" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function CheckIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2"><path d="m4 10 3.5 3.5L16 5" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function PhoneIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 5.15 12.8 19.8 19.8 0 0 1 2.08 4.13 2 2 0 0 1 4.07 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.64a2 2 0 0 1-.45 2.11L7.97 9.74a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.86.29 1.74.5 2.64.62A2 2 0 0 1 22 16.92Z" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function PinIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z" strokeLinecap="round" strokeLinejoin="round" /><circle cx="12" cy="10" r="2.5" /></svg>;
+}
+
+function WhatsAppIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M20.5 11.6a8.48 8.48 0 0 1-12.53 7.48L3.5 20.5l1.42-4.23A8.5 8.5 0 1 1 20.5 11.6Z" strokeLinecap="round" strokeLinejoin="round" /><path d="M8.35 7.65c.2-.45.41-.46.62-.47h.53c.16 0 .38.06.48.35l.67 1.59c.08.2.04.4-.08.55l-.42.5c-.12.12-.1.3 0 .42.37.64.97 1.18 1.64 1.5.15.08.3.07.42-.04l.63-.55c.14-.11.33-.14.5-.07l1.53.7c.24.1.3.27.3.42 0 .16-.08.86-.52 1.03-.4.15-.79.26-1.2.18-2.2-.45-4.62-2.55-5.42-4.58-.3-.75-.16-1.39.06-1.84Z" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
