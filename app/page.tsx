@@ -82,8 +82,8 @@ export default function Home() {
           <div className="hero-shape hero-shape-two" />
           <div className="hero-photo image-hover" data-parallax="0.045">
             <Image
-              src="/images/equipe-medica.jpg"
-              alt="Profissional do Instituto da Mulher de Piracicaba na recepção da clínica"
+              src="/images/medico.jpg"
+              alt="Médico do Instituto da Mulher de Piracicaba em seu consultório"
               fill
               priority
               sizes="(max-width: 900px) 90vw, 48vw"
@@ -199,8 +199,14 @@ export default function Home() {
         </div>
         <p>Saúde feminina com escuta, confiança e acolhimento.</p>
         <div className="social-links">
-          <a href="https://www.instagram.com/institutodamulherpiracicaba" target="_blank" rel="noreferrer">Instagram</a>
-          <a href="https://web.facebook.com/institutodamulherdepiracicaba/" target="_blank" rel="noreferrer">Facebook</a>
+          <a href="https://www.instagram.com/institutodamulherpiracicaba" target="_blank" rel="noreferrer" aria-label="Instagram do Instituto da Mulher de Piracicaba">
+            <InstagramIcon />
+            <span>Instagram</span>
+          </a>
+          <a href="https://web.facebook.com/institutodamulherdepiracicaba/" target="_blank" rel="noreferrer" aria-label="Facebook do Instituto da Mulher de Piracicaba">
+            <FacebookIcon />
+            <span>Facebook</span>
+          </a>
         </div>
       </footer>
 
@@ -236,6 +242,14 @@ export default function Home() {
 
 function ArrowIcon() {
   return <svg aria-hidden="true" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.8"><path d="M3.75 10h12.5M10.75 4.5 16.25 10l-5.5 5.5" strokeLinecap="round" strokeLinejoin="round" /></svg>;
+}
+
+function InstagramIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><rect x="3.25" y="3.25" width="17.5" height="17.5" rx="5" /><circle cx="12" cy="12" r="4.1" /><circle cx="17.55" cy="6.55" r=".9" fill="currentColor" stroke="none" /></svg>;
+}
+
+function FacebookIcon() {
+  return <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M13.8 21v-8h2.7l.4-3.1h-3.1V7.92c0-.9.25-1.52 1.57-1.52h1.67V3.62c-.29-.04-1.28-.12-2.44-.12-2.42 0-4.08 1.48-4.08 4.2v2.2H7.78V13h2.74v8h3.28Z" /></svg>;
 }
 
 function CheckIcon() {

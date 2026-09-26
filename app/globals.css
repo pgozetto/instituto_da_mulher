@@ -50,8 +50,16 @@ button { cursor: pointer; }
 .hero-shape { background: var(--lavender-soft); border-radius: 44% 54% 45% 48%; inset: 22px 0 0 4%; position: absolute; transform: rotate(-4deg); }
 .hero-shape-two { background: #eee8fd; border-radius: 48% 46% 48% 44%; inset: 11px 9% 10% 0; opacity: .9; transform: rotate(8deg); }
 .hero-photo { border-radius: 34px 34px 34px 150px; box-shadow: 0 24px 55px rgba(53, 33, 93, .15); height: 100%; overflow: hidden; position: absolute; right: 0; top: 0; width: 83%; }
-.hero-photo img { object-fit: cover; object-position: 35% center; }
+.hero-photo img { object-fit: cover; object-position: 50% 27%; }
 .hero-booking-card { align-items: center; background: #fff; border: 1px solid #f1edfa; border-radius: 21px; bottom: 7px; box-shadow: 0 18px 48px rgba(44, 31, 72, .11); display: grid; gap: 24px; grid-column: 1 / -1; grid-template-columns: .62fr 1.38fr; left: 32px; padding: 21px 24px; position: absolute; right: 32px; z-index: 5; }
+.hero-booking-card { background: linear-gradient(135deg, #7750d4 0%, #9068f0 52%, #b69af7 100%); border-color: transparent; box-shadow: 0 20px 48px rgba(91, 54, 170, .26); color: #fff; }
+.hero-booking-card .booking-heading .eyebrow { color: #f3ecff; }
+.hero-booking-card .booking-heading h2 { color: #fff; }
+.hero-booking-card .booking-field label { color: #f6f1ff; }
+.hero-booking-card .booking-field input,
+.hero-booking-card .booking-field select { background: rgba(255, 255, 255, .96); border-color: rgba(255, 255, 255, .45); color: #26212e; }
+.hero-booking-card .booking-submit { background: #fff; color: #6942b5; }
+.hero-booking-card .booking-submit:hover { background: #f7f1ff; }
 .booking-heading .eyebrow { font-size: 11px; }
 .booking-heading h2 { font-size: 23px; letter-spacing: -.04em; margin: 7px 0 0; }
 .booking-form { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
@@ -118,12 +126,13 @@ button { cursor: pointer; }
 .contact-form-wrap .booking-form { grid-template-columns: 1fr; }
 .contact-form-wrap .booking-submit { margin-top: 3px; }
 
-.site-footer { align-items: center; border-top: 1px solid var(--line); display: flex; gap: 28px; justify-content: space-between; min-height: 108px; }
+.site-footer { align-items: center; background: linear-gradient(135deg, #f7f2ff 0%, #eee5ff 100%); border: 1px solid #e3d7fb; border-radius: 24px 24px 0 0; display: flex; gap: 28px; justify-content: space-between; min-height: 128px; padding: 24px 28px; }
 .footer-brand img { border-radius: 50%; height: 38px; object-fit: cover; width: 38px; }
 .site-footer > p { color: var(--muted); font-size: 14px; margin: 0 auto 0 15px; }
-.social-links { display: flex; gap: 17px; }
-.social-links a { color: #4a4255; font-size: 14px; font-weight: 700; }
-.social-links a:hover { color: var(--purple); }
+.social-links { display: flex; gap: 10px; }
+.social-links a { align-items: center; background: #fff; border: 1px solid #ddcff8; border-radius: 999px; box-shadow: 0 7px 18px rgba(91, 54, 170, .1); color: #57349c; display: inline-flex; font-size: 14px; font-weight: 750; gap: 8px; min-height: 45px; padding: 0 15px 0 10px; transition: background .2s ease, box-shadow .2s ease, transform .2s ease; }
+.social-links a:hover { background: var(--purple); box-shadow: 0 11px 24px rgba(91, 54, 170, .22); color: #fff; transform: translateY(-2px); }
+.social-links svg { height: 23px; width: 23px; }
 .floating-whatsapp { align-items: center; background: #2ebc70; border: 1px solid rgba(255,255,255,.4); border-radius: 999px; bottom: 22px; box-shadow: 0 8px 24px rgba(14, 82, 43, .24); color: white; display: flex; font-size: 14px; font-weight: 750; gap: 8px; padding: 12px 18px 12px 13px; position: fixed; right: 22px; z-index: 41; }
 .floating-whatsapp svg { height: 22px; width: 22px; }
 
@@ -178,8 +187,10 @@ button { cursor: pointer; }
   .gallery-item-large { grid-column: 1 / -1; }
   .contact-card { border-radius: 22px; gap: 34px; padding: 36px 25px; }
   .contact-copy h2 { font-size: 40px; }
-  .site-footer { align-items: flex-start; flex-direction: column; gap: 16px; padding-block: 28px; }
+  .site-footer { align-items: flex-start; flex-direction: column; gap: 16px; padding: 28px 20px; }
   .site-footer > p { margin: 0; }
+  .social-links { width: 100%; }
+  .social-links a { flex: 1; justify-content: center; }
   .floating-whatsapp { bottom: 14px; right: 14px; }
   .floating-whatsapp span { display: none; }
   .floating-whatsapp { border-radius: 50%; height: 52px; justify-content: center; padding: 0; width: 52px; }
