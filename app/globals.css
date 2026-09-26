@@ -35,7 +35,7 @@ button { cursor: pointer; }
 .button-outline { border-color: #baabdd; color: #5f3db1; }
 .button-outline:hover { background: #faf8ff; }
 .header-cta { min-height: 46px; padding: 0 18px; }
-#inicio, #especialidades, #sobre, #estrutura, #contato { scroll-margin-top: 105px; }
+#inicio, #especialidades, #profissionais, #sobre, #estrutura, #contato { scroll-margin-top: 105px; }
 
 .hero { display: grid; gap: 58px; grid-template-columns: .92fr 1.08fr; min-height: 690px; padding-top: 84px; position: relative; }
 .hero-copy { align-self: center; padding-bottom: 102px; position: relative; z-index: 2; }
@@ -82,6 +82,17 @@ button { cursor: pointer; }
 .specialty-card p { color: var(--muted); font-size: 15px; line-height: 1.62; margin: 0; }
 .specialty-card a { align-items: center; color: #5c35a4; display: inline-flex; font-size: 14px; font-weight: 750; gap: 6px; margin-top: 21px; }
 
+.professionals-section { background: linear-gradient(135deg, #fbf9ff 0%, #f3edff 100%); border-radius: 30px; }
+.professionals-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 48px; }
+.professional-card { background: #fff; border: 1px solid #e8def9; border-radius: 22px; box-shadow: 0 10px 28px rgba(47, 28, 84, .07); overflow: hidden; transition: box-shadow .25s ease, transform .25s ease; }
+.professional-card:hover { box-shadow: 0 20px 38px rgba(59, 42, 94, .14); transform: translate3d(0, calc(var(--parallax-y, 0px) - 5px), 0); }
+.professional-photo { height: 322px; overflow: hidden; position: relative; }
+.professional-photo img { object-fit: cover; object-position: center 27%; }
+.professional-card-copy { padding: 22px 22px 24px; }
+.professional-card-copy h3 { color: var(--ink); font-size: 21px; letter-spacing: -.04em; line-height: 1.15; margin: 0; }
+.professional-role { color: #633fa9; font-size: 15px; font-weight: 750; margin: 11px 0 0; text-transform: uppercase; }
+.professional-registration { color: var(--muted); font-size: 14px; margin: 7px 0 0; }
+
 .story-section { background: #fbfaff; overflow: hidden; }
 .story-layout { align-items: center; display: grid; gap: 9%; grid-template-columns: 1fr 1fr; }
 .story-images { height: 450px; position: relative; }
@@ -104,7 +115,7 @@ button { cursor: pointer; }
 .gallery-section { background: #f7f4fd; }
 .gallery-header { align-items: end; display: flex; gap: 50px; justify-content: space-between; }
 .gallery-header > p { color: var(--muted); font-size: 16px; line-height: 1.65; margin: 0 0 17px; max-width: 390px; }
-.gallery-grid { display: grid; gap: 16px; grid-template-columns: 1.12fr .88fr .88fr; margin-top: 45px; }
+.gallery-grid { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); margin-top: 45px; }
 .gallery-item { border-radius: 19px; height: 285px; overflow: hidden; position: relative; }
 .gallery-item-large { height: 360px; }
 .gallery-item img { object-fit: cover; transition: transform .5s ease; }
@@ -149,6 +160,7 @@ button { cursor: pointer; }
   .hero h1 { font-size: 64px; }
   .hero-booking-card { left: 0; right: 0; }
   .specialties-grid { grid-template-columns: repeat(2, 1fr); }
+  .professionals-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-card { padding: 48px; }
 }
 
@@ -174,6 +186,8 @@ button { cursor: pointer; }
   .booking-submit { min-height: 48px; }
   .hero-actions { align-items: center; flex-direction: column; gap: 16px; }
   .specialties-grid { grid-template-columns: 1fr; margin-top: 32px; }
+  .professionals-grid { grid-template-columns: 1fr; margin-top: 32px; }
+  .professional-photo { height: 330px; }
   .specialty-card { min-height: 0; }
   .story-layout, .care-section, .contact-card { grid-template-columns: 1fr; }
   .story-layout, .care-section { gap: 40px; }

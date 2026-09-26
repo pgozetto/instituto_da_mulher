@@ -36,6 +36,30 @@ const procedures = [
   "Exame preventivo (Papanicolau)",
 ];
 
+const professionals = [
+  {
+    image: "/images/medico.jpg",
+    name: "Dr. Eduardo Henrique Salvador",
+    registration: "CRM 111862",
+    role: "Ginecologista obstetra",
+    alt: "Dr. Eduardo Henrique Salvador, ginecologista obstetra",
+  },
+  {
+    image: "/images/ana-cristina.jpg",
+    name: "Ana Cristina Vitor",
+    registration: "CRP 06/158617",
+    role: "Psicóloga",
+    alt: "Ana Cristina Vitor, psicóloga",
+  },
+  {
+    image: "/images/kimberly.jpg",
+    name: "Kimberly Machado Belluco",
+    registration: "CRN 72717",
+    role: "Nutricionista e personal trainer",
+    alt: "Kimberly Machado Belluco, nutricionista e personal trainer",
+  },
+];
+
 export default function Home() {
   return (
     <main className="antialiased">
@@ -50,6 +74,7 @@ export default function Home() {
         </a>
         <nav className="desktop-nav" aria-label="Navegação principal">
           <a href="#especialidades">Especialidades</a>
+          <a href="#profissionais">Profissionais</a>
           <a href="#sobre">O Instituto</a>
           <a href="#estrutura">Estrutura</a>
           <a href="#contato">Contato</a>
@@ -119,6 +144,28 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="profissionais" className="professionals-section section-shell section-space">
+        <div className="section-heading centered-heading">
+          <span className="eyebrow">Nossa equipe</span>
+          <h2>Profissionais que cuidam de cada detalhe.</h2>
+          <p>Uma equipe experiente e multidisciplinar para acompanhar você com escuta, conhecimento e acolhimento.</p>
+        </div>
+        <div className="professionals-grid">
+          {professionals.map((professional) => (
+            <article className="professional-card" data-parallax="0.018" key={professional.name}>
+              <div className="professional-photo image-hover">
+                <Image src={professional.image} alt={professional.alt} fill sizes="(max-width: 720px) 100vw, 33vw" />
+              </div>
+              <div className="professional-card-copy">
+                <h3>{professional.name}</h3>
+                <p className="professional-role">{professional.role}</p>
+                <p className="professional-registration">{professional.registration}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section id="sobre" className="story-section section-space">
         <div className="section-shell story-layout">
           <div className="story-images">
@@ -168,7 +215,6 @@ export default function Home() {
             <p>Localizado em uma região de fácil acesso em Piracicaba, o Instituto foi pensado para oferecer conforto desde a chegada.</p>
           </div>
           <div className="gallery-grid">
-            <div className="gallery-item gallery-item-large image-hover" data-parallax="0.04"><Image src="/images/equipe-recepcao.jpg" alt="Profissional na recepção da clínica" fill sizes="(max-width: 900px) 100vw, 44vw" /></div>
             <div className="gallery-item image-hover" data-parallax="0.025"><Image src="/images/recepcionista-1.jpg" alt="Atendimento na recepção do Instituto" fill sizes="(max-width: 900px) 50vw, 25vw" /></div>
             <div className="gallery-item image-hover" data-parallax="0.035"><Image src="/images/recepcionista-2.jpg" alt="Equipe de atendimento do Instituto da Mulher" fill sizes="(max-width: 900px) 50vw, 25vw" /></div>
           </div>
