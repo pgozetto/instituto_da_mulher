@@ -46,6 +46,10 @@ Para iniciar a aplicação gerada:
 npm run start
 ```
 
+### Deploy na Vercel
+
+O projeto mantém o build Vinext para o ChatGPT Sites e possui um build separado para a Vercel. O arquivo `vercel.json` faz a Vercel executar `npm run build:vercel`, que gera o diretório `.next` esperado pelo adaptador Next.js.
+
 ## Estrutura principal
 
 ```text

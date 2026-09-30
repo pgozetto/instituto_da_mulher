@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
+    "build:vercel": "next build",
     "start": "vinext start",
     "lint": "next lint",
     "dev:vinext": "vinext dev --port 3001",
