@@ -65,6 +65,13 @@ const professionals = [
     role: "Enfermeira",
     alt: "Deise Pessoa, enfermeira",
   },
+  {
+    image: "/images/giuliana-vitti.jpg",
+    name: "Dra. Giuliana Mazziero Vitti",
+    registration: "",
+    role: "Ginecologista obstetra",
+    alt: "Dra. Giuliana Mazziero Vitti, ginecologista obstetra",
+  },
 ];
 
 export default function Home() {
@@ -114,7 +121,7 @@ export default function Home() {
           <div className="hero-shape hero-shape-two" />
           <div className="hero-photo image-hover" data-parallax="0.045">
             <Image
-              src="/images/medico.jpg"
+              src="/images/eduardo-giuliana.jpg"
               alt="Médico do Instituto da Mulher de Piracicaba em seu consultório"
               fill
               priority
@@ -166,7 +173,8 @@ export default function Home() {
               <div className="professional-card-copy">
                 <h3>{professional.name}</h3>
                 <p className="professional-role">{professional.role}</p>
-                <p className="professional-registration">{professional.registration}</p>              </div>
+                {professional.registration && <p className="professional-registration">{professional.registration}</p>}
+              </div>
             </article>
           ))}
         </div>
@@ -176,7 +184,7 @@ export default function Home() {
         <div className="section-shell story-layout">
           <div className="story-images">
             <div className="story-main-image image-hover" data-parallax="0.04">
-              <Image src="/images/equipe-completa.png" alt="Equipe reunida no Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 90vw, 40vw" />
+              <Image src="/images/equipe-atualizada.png" alt="Equipe reunida no Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 90vw, 40vw" />
             </div>
             <div className="story-small-image image-hover" data-parallax="0.025">
               <Image src="/images/consultorio.jpg" alt="Detalhe da estrutura do Instituto da Mulher de Piracicaba" fill sizes="(max-width: 900px) 42vw, 20vw" />

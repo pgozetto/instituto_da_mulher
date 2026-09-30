@@ -43,6 +43,7 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
           <option>Colocação ou retirada de DIU</option>
           <option>Implanon</option>
           <option>Reposição hormonal</option>
+          <option>Desmame gradual</option>
           <option>Cuidados com o recém-nascido</option>
           <option>Apresentação alimentar</option>
           <option>Taping terapêutico</option>
