@@ -83,7 +83,9 @@ button { cursor: pointer; }
 .specialty-card a { align-items: center; color: #5c35a4; display: inline-flex; font-size: 14px; font-weight: 750; gap: 6px; margin-top: 21px; }
 
 .professionals-section { background: linear-gradient(135deg, #fbf9ff 0%, #f3edff 100%); border-radius: 30px; }
-.professionals-grid { display: grid; gap: 18px; grid-template-columns: repeat(4, 1fr); margin-top: 48px; }
+.professionals-grid { display: grid; gap: 18px; grid-template-columns: repeat(6, 1fr); margin-top: 48px; }
+.professionals-grid .professional-card:nth-child(-n + 2) { grid-column: span 3; }
+.professionals-grid .professional-card:nth-child(n + 3) { grid-column: span 2; }
 .professional-card { background: #fff; border: 1px solid #e8def9; border-radius: 22px; box-shadow: 0 10px 28px rgba(47, 28, 84, .07); overflow: hidden; transition: box-shadow .25s ease, transform .25s ease; }
 .professional-card:hover { box-shadow: 0 20px 38px rgba(59, 42, 94, .14); transform: translate3d(0, calc(var(--parallax-y, 0px) - 5px), 0); }
 .professional-photo { height: 322px; overflow: hidden; position: relative; }
@@ -161,6 +163,7 @@ button { cursor: pointer; }
   .hero-booking-card { left: 0; right: 0; }
   .specialties-grid { grid-template-columns: repeat(2, 1fr); }
   .professionals-grid { grid-template-columns: repeat(2, 1fr); }
+  .professionals-grid .professional-card:nth-child(n) { grid-column: span 1; }
   .contact-card { padding: 48px; }
 }
 

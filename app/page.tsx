@@ -45,6 +45,13 @@ const professionals = [
     alt: "Dr. Eduardo Henrique Salvador, ginecologista obstetra",
   },
   {
+    image: "/images/giuliana-vitti.jpg",
+    name: "Dra. Giuliana Mazziero Vitti",
+    registration: "CRM 108554",
+    role: "Ginecologista e obstetra",
+    alt: "Dra. Giuliana Mazziero Vitti, ginecologista e obstetra",
+  },
+  {
     image: "/images/ana-cristina.jpg",
     name: "Ana Cristina Vitor",
     registration: "CRP 06/158617",
@@ -64,13 +71,6 @@ const professionals = [
     registration: "COREN-SP 513368",
     role: "Enfermeira",
     alt: "Deise Pessoa, enfermeira",
-  },
-  {
-    image: "/images/giuliana-vitti.jpg",
-    name: "Dra. Giuliana Mazziero Vitti",
-    registration: "",
-    role: "Ginecologista obstetra",
-    alt: "Dra. Giuliana Mazziero Vitti, ginecologista obstetra",
   },
 ];
 
