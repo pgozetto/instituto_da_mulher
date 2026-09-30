@@ -58,6 +58,13 @@ const professionals = [
     role: "Nutricionista e personal trainer",
     alt: "Kimberly Machado Belluco, nutricionista e personal trainer",
   },
+  {
+    image: "/images/enfermeira.webp",
+    name: "Deise Pessoa",
+    registration: "COREN-SP 513368",
+    role: "Enfermeira",
+    alt: "Deise Pessoa, enfermeira",
+  },
 ];
 
 export default function Home() {
@@ -154,13 +161,12 @@ export default function Home() {
           {professionals.map((professional) => (
             <article className="professional-card" data-parallax="0.018" key={professional.name}>
               <div className="professional-photo image-hover">
-                <Image src={professional.image} alt={professional.alt} fill sizes="(max-width: 720px) 100vw, 33vw" />
+                <Image src={professional.image} alt={professional.alt} fill sizes="(max-width: 720px) 100vw, 25vw" />
               </div>
               <div className="professional-card-copy">
                 <h3>{professional.name}</h3>
                 <p className="professional-role">{professional.role}</p>
-                <p className="professional-registration">{professional.registration}</p>
-              </div>
+                <p className="professional-registration">{professional.registration}</p>              </div>
             </article>
           ))}
         </div>

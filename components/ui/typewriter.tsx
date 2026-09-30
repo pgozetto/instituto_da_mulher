@@ -60,15 +60,23 @@ export function Typewriter({
     return () => clearInterval(cursorInterval)
   }, [cursor])
 
+  const cursorMark = cursor && (
+    <span className="ml-1 transition-opacity duration-75" style={{ opacity: showCursor ? 1 : 0 }} aria-hidden="true">
+      {cursorChar}
+    </span>
+  )
+  const longestWord = words.reduce((longest, word) => (word.length > longest.length ? word : longest), "")
+
+  // The invisible copy of the full text reserves the final height, so the typing never pushes the page down.
   return (
-    <span className="inline-block">
-      <span>
+    <span style={{ display: "inline-grid" }}>
+      <span style={{ gridArea: "1 / 1", visibility: "hidden" }} aria-hidden="true">
+        {longestWord}
+        {cursor && <span className="ml-1">{cursorChar}</span>}
+      </span>
+      <span style={{ gridArea: "1 / 1" }}>
         {displayText}
-        {cursor && (
-          <span className="ml-1 transition-opacity duration-75" style={{ opacity: showCursor ? 1 : 0 }} aria-hidden="true">
-            {cursorChar}
-          </span>
-        )}
+        {cursorMark}
       </span>
     </span>
   )

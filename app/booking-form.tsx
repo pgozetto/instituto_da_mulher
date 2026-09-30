@@ -43,6 +43,12 @@ export function BookingForm({ compact = false }: { compact?: boolean }) {
           <option>Colocação ou retirada de DIU</option>
           <option>Implanon</option>
           <option>Reposição hormonal</option>
+          <option>Cuidados com o recém-nascido</option>
+          <option>Apresentação alimentar</option>
+          <option>Taping terapêutico</option>
+          <option>Furo humanizado</option>
+          <option>Laserterapia</option>
+          <option>Cone hindu</option>
         </select>
       </div>
       <button className="button button-primary booking-submit" type="submit">

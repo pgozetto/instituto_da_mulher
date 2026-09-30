@@ -83,7 +83,7 @@ button { cursor: pointer; }
 .specialty-card a { align-items: center; color: #5c35a4; display: inline-flex; font-size: 14px; font-weight: 750; gap: 6px; margin-top: 21px; }
 
 .professionals-section { background: linear-gradient(135deg, #fbf9ff 0%, #f3edff 100%); border-radius: 30px; }
-.professionals-grid { display: grid; gap: 18px; grid-template-columns: repeat(3, 1fr); margin-top: 48px; }
+.professionals-grid { display: grid; gap: 18px; grid-template-columns: repeat(4, 1fr); margin-top: 48px; }
 .professional-card { background: #fff; border: 1px solid #e8def9; border-radius: 22px; box-shadow: 0 10px 28px rgba(47, 28, 84, .07); overflow: hidden; transition: box-shadow .25s ease, transform .25s ease; }
 .professional-card:hover { box-shadow: 0 20px 38px rgba(59, 42, 94, .14); transform: translate3d(0, calc(var(--parallax-y, 0px) - 5px), 0); }
 .professional-photo { height: 322px; overflow: hidden; position: relative; }
@@ -92,16 +92,16 @@ button { cursor: pointer; }
 .professional-card-copy h3 { color: var(--ink); font-size: 21px; letter-spacing: -.04em; line-height: 1.15; margin: 0; }
 .professional-role { color: #633fa9; font-size: 15px; font-weight: 750; margin: 11px 0 0; text-transform: uppercase; }
 .professional-registration { color: var(--muted); font-size: 14px; margin: 7px 0 0; }
-
 .story-section { background: #fbfaff; overflow: hidden; }
-.story-layout { align-items: center; display: grid; gap: 9%; grid-template-columns: 1fr 1fr; }
-.story-images { height: 450px; position: relative; }
-.story-main-image, .story-small-image { overflow: hidden; position: absolute; }
-.story-main-image { border-radius: 30px 30px 30px 130px; height: 90%; left: 0; top: 0; width: 75%; }
-.story-main-image img { object-fit: cover; object-position: 43% center; }
-.story-small-image { border: 5px solid #fbfaff; border-radius: 22px; bottom: 0; height: 44%; right: 0; width: 43%; }
+.story-layout { display: grid; gap: 64px; grid-template-columns: 1fr; }
+.story-images { padding-bottom: 7%; position: relative; }
+.story-main-image, .story-small-image { overflow: hidden; }
+.story-main-image { aspect-ratio: 1574 / 999; border-radius: 30px 30px 110px 30px; position: relative; width: 100%; }
+.story-main-image img { object-fit: cover; object-position: center; }
+.story-small-image { aspect-ratio: 4 / 3; border: 5px solid #fbfaff; border-radius: 22px; bottom: 0; left: 4%; position: absolute; width: 24%; }
 .story-small-image img { object-fit: cover; object-position: center; }
-.story-copy { max-width: 510px; }
+.story-copy { margin-inline: auto; max-width: 760px; text-align: center; }
+.story-copy .eyebrow { justify-content: center; }
 .story-copy p + p { margin-top: 15px; }
 .story-copy .text-link { margin-top: 25px; }
 
@@ -191,7 +191,9 @@ button { cursor: pointer; }
   .specialty-card { min-height: 0; }
   .story-layout, .care-section, .contact-card { grid-template-columns: 1fr; }
   .story-layout, .care-section { gap: 40px; }
-  .story-images { height: 390px; }
+  .story-main-image { aspect-ratio: 5 / 4; border-radius: 0 0 60px 0; margin-inline: -16px; width: calc(100% + 32px); }
+  .story-main-image img { object-position: 70% center; }
+  .story-small-image { border-width: 3px; border-radius: 14px; width: 28%; }
   .care-section { display: flex; flex-direction: column-reverse; }
   .care-photo { height: 380px; width: 100%; }
   .gallery-header { align-items: flex-start; flex-direction: column; gap: 0; }
