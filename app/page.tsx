@@ -41,7 +41,7 @@ const professionals = [
     image: "/images/medico.jpg",
     name: "Dr. Eduardo Henrique Salvador",
     registration: "CRM 111862",
-    role: "Ginecologista obstetra",
+    role: "Ginecologista e Obstetra",
     alt: "Dr. Eduardo Henrique Salvador, ginecologista obstetra",
   },
   {
