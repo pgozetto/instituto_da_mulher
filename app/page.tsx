@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BookingForm } from "./booking-form";
 import { ParallaxEffects } from "./parallax-effects";
+import { ProfessionalsGrid, type Professional } from "./professionals-grid";
 import { Typewriter } from "../components/ui/typewriter";
 
 const WHATSAPP_URL = "https://wa.me/5519996789337?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta%20no%20Instituto%20da%20Mulher%20de%20Piracicaba.";
@@ -15,7 +16,7 @@ const services = [
   {
     icon: "◌",
     title: "Obstetrícia",
-    text: "Atenção acolhedora durante a gestação, com acompanhamento próximo para você e seu bebê.",
+    text: "Atenção acolhedora durante a gestação e com acompanhamento próximo para você e seu bebê.",
   },
   {
     icon: "⌁",
@@ -25,24 +26,27 @@ const services = [
   {
     icon: "⟡",
     title: "Nutrição",
-    text: "Orientação nutricional individualizada para escolhas que façam sentido na sua rotina.",
+    text: "Orientação individualizada, com escolhas adequadas à sua rotina.",
   },
 ];
 
 const procedures = [
   "Colocação e retirada de DIU",
-  "Implanon",
-  "Reposição hormonal",
-  "Exame preventivo (Papanicolau)",
+  "MCP Formal",
+  "Exame preventivo (rotina ginecológica, com foco na prevenção de doenças)",
+  "Rotina ginecológica",
 ];
 
-const professionals = [
+const professionals: Professional[] = [
   {
     image: "/images/medico.jpg",
     name: "Dr. Eduardo Henrique Salvador",
     registration: "CRM 111862",
     role: "Ginecologista e Obstetra",
     alt: "Dr. Eduardo Henrique Salvador, ginecologista obstetra",
+    about: "Médico ginecologista e obstetra do Instituto da Mulher de Piracicaba.",
+    work: "Acompanha a saúde da mulher em consultas de rotina, prevenção, planejamento familiar, gestação e pós-parto.",
+    meaning: "Cuidar da saúde ginecológica e da gestação é acompanhar a mulher nos momentos mais importantes da vida, com segurança, escuta e respeito às suas escolhas.",
   },
   {
     image: "/images/giuliana-vitti.jpg",
@@ -50,6 +54,9 @@ const professionals = [
     registration: "CRM 108554",
     role: "Ginecologista e obstetra",
     alt: "Dra. Giuliana Mazziero Vitti, ginecologista e obstetra",
+    about: "Médica ginecologista e obstetra do Instituto da Mulher de Piracicaba.",
+    work: "Realiza consultas ginecológicas, exames preventivos e o acompanhamento da gestação, do pré-natal ao pós-parto.",
+    meaning: "Um olhar atento para cada fase da vida feminina ajuda a prevenir, orientar e trazer mais tranquilidade para as decisões sobre o próprio corpo.",
   },
   {
     image: "/images/ana-cristina.jpg",
@@ -57,6 +64,9 @@ const professionals = [
     registration: "CRP 06/158617",
     role: "Psicóloga",
     alt: "Ana Cristina Vitor, psicóloga",
+    about: "Psicóloga do Instituto da Mulher de Piracicaba.",
+    work: "Oferece atendimento psicológico com escuta qualificada para as questões emocionais de cada momento da vida.",
+    meaning: "A saúde emocional faz parte da saúde da mulher. Ter um espaço seguro para falar e ser ouvida transforma a forma de viver cada fase.",
   },
   {
     image: "/images/kimberly.jpg",
@@ -64,6 +74,9 @@ const professionals = [
     registration: "CRN 72717",
     role: "Nutricionista e personal trainer",
     alt: "Kimberly Machado Belluco, nutricionista e personal trainer",
+    about: "Nutricionista e personal trainer do Instituto da Mulher de Piracicaba.",
+    work: "Faz orientação nutricional individualizada e une alimentação e atividade física de acordo com a sua rotina e os seus objetivos.",
+    meaning: "Comer bem e cuidar do corpo, sem fórmulas prontas, é uma forma de ter mais energia, bem-estar e saúde em cada fase da vida.",
   },
   {
     image: "/images/enfermeira.webp",
@@ -71,6 +84,9 @@ const professionals = [
     registration: "COREN-SP 513368",
     role: "Enfermeira",
     alt: "Deise Pessoa, enfermeira",
+    about: "Enfermeira do Instituto da Mulher de Piracicaba.",
+    work: "Atua com consultoria em amamentação, cuidados com o recém-nascido, apresentação alimentar, taping terapêutico, furo humanizado, laserterapia e cone hindu.",
+    meaning: "Apoiar a mãe e o bebê nos primeiros cuidados traz mais confiança e leveza para uma fase cheia de descobertas.",
   },
 ];
 
@@ -106,7 +122,7 @@ export default function Home() {
             <Typewriter words={["Seu cuidado merece atenção por inteiro."]} speed={72} delayBetweenWords={2600} />
           </h1>
           <p>
-            Uma clínica feita para acompanhar você com escuta, tecnologia e uma equipe que entende cada fase da vida feminina.
+            Uma clínica feita, pensada, programada e planejada para acompanhar você com escuta, tecnologia e uma equipe que entende cada fase da vida feminina.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href={WHATSAPP_URL} target="_blank" rel="noreferrer">
@@ -162,22 +178,9 @@ export default function Home() {
         <div className="section-heading centered-heading">
           <span className="eyebrow">Nossa equipe</span>
           <h2>Profissionais que cuidam de cada detalhe.</h2>
-          <p>Uma equipe experiente e multidisciplinar para acompanhar você com escuta, conhecimento e acolhimento.</p>
+          <p>Uma equipe experiente para acompanhar você com conhecimento e acolhimento.</p>
         </div>
-        <div className="professionals-grid">
-          {professionals.map((professional) => (
-            <article className="professional-card" data-parallax="0.018" key={professional.name}>
-              <div className="professional-photo image-hover">
-                <Image src={professional.image} alt={professional.alt} fill sizes="(max-width: 720px) 100vw, 25vw" />
-              </div>
-              <div className="professional-card-copy">
-                <h3>{professional.name}</h3>
-                <p className="professional-role">{professional.role}</p>
-                {professional.registration && <p className="professional-registration">{professional.registration}</p>}
-              </div>
-            </article>
-          ))}
-        </div>
+        <ProfessionalsGrid professionals={professionals} />
       </section>
 
       <section id="sobre" className="story-section section-space">
@@ -227,6 +230,11 @@ export default function Home() {
               <h2>Um ambiente leve para você se sentir bem.</h2>
             </div>
             <p>Localizado em uma região de fácil acesso em Piracicaba, o Instituto foi pensado para oferecer conforto desde a chegada.</p>
+          </div>
+          <div className="gallery-highlights">
+            <p className="gallery-quote">Instituto da Mulher em Piracicaba: saúde feminina com <strong>escuta, confiança e acolhimento</strong>.</p>
+            <p>Saúde feminina personalizada para cada fase da vida.</p>
+            <p>Saúde feminina individualizada e com acompanhamento próximo em cada fase da vida.</p>
           </div>
           <div className="gallery-grid">
             <div className="gallery-item image-hover" data-parallax="0.025"><Image src="/images/recepcionista-1.jpg" alt="Atendimento na recepção do Instituto" fill sizes="(max-width: 900px) 50vw, 25vw" /></div>
