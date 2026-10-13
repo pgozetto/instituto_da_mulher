@@ -95,15 +95,23 @@ export function ProfessionalsGrid({ professionals }: { professionals: Profession
               <h3 id="professional-modal-title">{selected.name}</h3>
               {selected.registration && <p className="professional-registration">{selected.registration}</p>}
               <h4>Quem é</h4>
-              <p>{selected.about}</p>
+              <Paragraphs text={selected.about} />
               <h4>O que faz</h4>
-              <p>{selected.work}</p>
+              <Paragraphs text={selected.work} />
               <h4>O significado deste cuidado</h4>
-              <p>{selected.meaning}</p>
+              <Paragraphs text={selected.meaning} />
             </div>
           </div>
         </div>
       )}
     </>
+  );
+}
+
+function Paragraphs({ text }: { text: string }) {
+  return (
+    <div className="professional-modal-text">
+      {text.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+    </div>
   );
 }
