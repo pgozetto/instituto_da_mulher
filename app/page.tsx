@@ -44,9 +44,9 @@ const professionals: Professional[] = [
     registration: "CRM 111862",
     role: "Ginecologista e Obstetra",
     alt: "Dr. Eduardo Henrique Salvador, ginecologista obstetra",
-    about: "O Dr. Eduardo Henrique Salvador é médico ginecologista e obstetra do Instituto da Mulher de Piracicaba, dedicado ao cuidado integral da saúde feminina em todas as fases da vida.",
-    work: "Atua na prevenção, nas consultas de rotina, no planejamento familiar, no acompanhamento da gestação e no pós-parto, oferecendo um atendimento pautado na segurança, na escuta e no respeito às escolhas de cada mulher.",
-    meaning: "Seu compromisso é promover saúde, bem-estar e qualidade de vida, acolhendo cada paciente com atenção, confiança e humanização.",
+    bio: [
+      "O Dr. Eduardo Henrique Salvador é médico ginecologista e obstetra do Instituto da Mulher de Piracicaba, dedicado ao cuidado integral da saúde feminina em todas as fases da vida. Atua na prevenção, nas consultas de rotina, no planejamento familiar, no acompanhamento da gestação e no pós-parto, oferecendo um atendimento pautado na segurança, na escuta e no respeito às escolhas de cada mulher. Seu compromisso é promover saúde, bem-estar e qualidade de vida, acolhendo cada paciente com atenção, confiança e humanização.",
+    ],
   },
   {
     image: "/images/giuliana-vitti.jpg",
@@ -54,9 +54,9 @@ const professionals: Professional[] = [
     registration: "CRM 108554",
     role: "Ginecologista e obstetra",
     alt: "Dra. Giuliana Mazziero Vitti, ginecologista e obstetra",
-    about: "Médica ginecologista e obstetra do Instituto da Mulher de Piracicaba, a Dra. Giuliana Mazziero Vitti dedica-se ao cuidado integral da saúde feminina em todas as fases da vida.",
-    work: "Atua em consultas ginecológicas, exames preventivos e acompanhamento da gestação, desde o pré-natal até o pós-parto, com atenção às necessidades individuais de cada paciente.",
-    meaning: "Seu trabalho é pautado na prevenção, na orientação e no acolhimento, promovendo segurança, bem-estar e tranquilidade para que cada mulher possa fazer escolhas conscientes sobre sua saúde e seu próprio corpo.",
+    bio: [
+      "Médica ginecologista e obstetra do Instituto da Mulher de Piracicaba, a Dra. Giuliana Mazziero Vitti dedica-se ao cuidado integral da saúde feminina em todas as fases da vida. Atua em consultas ginecológicas, exames preventivos e cuidados relacionados à saúde da mulher, com atenção às necessidades individuais de cada paciente. Seu trabalho é pautado na prevenção, na orientação e no acolhimento, promovendo segurança, bem-estar e tranquilidade para que cada mulher possa fazer escolhas conscientes sobre sua saúde e seu próprio corpo.",
+    ],
   },
   {
     image: "/images/ana-cristina.jpg",
@@ -64,9 +64,12 @@ const professionals: Professional[] = [
     registration: "CRP 06/158617",
     role: "Psicóloga e neuropsicóloga",
     alt: "Ana Cristina de Souza Vitor, psicóloga e neuropsicóloga",
-    about: "Psicóloga e neuropsicóloga, com atuação clínica e em avaliação neuropsicológica, realizando atendimentos em todas as fases da vida, da infância ao envelhecimento.",
-    work: "O trabalho é voltado à compreensão das emoções, dos comportamentos e das dificuldades de cada indivíduo, com foco no acolhimento, na escuta clínica e na compreensão das demandas psicológicas.\n\nNa avaliação neuropsicológica, busca compreender o funcionamento cognitivo, emocional e comportamental, considerando a história de vida e as particularidades de cada pessoa. A atuação é pautada na ética, no conhecimento técnico e no cuidado individualizado.",
-    meaning: "Cada pessoa tem sua própria história, e compreendê-la é parte essencial do cuidado psicológico. O atendimento busca respeitar essa singularidade, oferecendo um acompanhamento ético, acolhedor e atento às necessidades de cada indivíduo.",
+    bio: [
+      "Psicóloga e neuropsicóloga, com atuação clínica e em avaliação neuropsicológica, realizando atendimentos em todas as fases da vida, da infância ao envelhecimento.",
+      "O trabalho é voltado à compreensão das emoções, dos comportamentos e das dificuldades de cada indivíduo, com foco no acolhimento, na escuta clínica e na compreensão das demandas psicológicas.",
+      "Na avaliação neuropsicológica, busca compreender o funcionamento cognitivo, emocional e comportamental, considerando a história de vida e as particularidades de cada pessoa. A atuação é pautada na ética, no conhecimento técnico e no cuidado individualizado.",
+      "Cada pessoa tem sua própria história, e compreendê-la é parte essencial do cuidado psicológico. O atendimento busca respeitar essa singularidade, oferecendo um acompanhamento ético, acolhedor e atento às necessidades de cada indivíduo.",
+    ],
   },
   {
     image: "/images/kimberly.jpg",
@@ -74,9 +77,9 @@ const professionals: Professional[] = [
     registration: "CRN 72717",
     role: "Nutricionista e educadora física",
     alt: "Kimberly Machado Belluco, nutricionista e educadora física",
-    about: "Nutricionista e educadora física do Instituto da Mulher de Piracicaba, dedicada à promoção da saúde, do bem-estar e da qualidade de vida de crianças, adolescentes e adultos.",
-    work: "Seu trabalho integra orientação nutricional individualizada e cuidados com a atividade física, considerando as necessidades, a rotina e os objetivos de cada pessoa.",
-    meaning: "Com uma abordagem personalizada e sem fórmulas prontas, incentiva hábitos saudáveis e escolhas conscientes, contribuindo para mais disposição, equilíbrio e saúde em todas as fases da vida.",
+    bio: [
+      "Kimberly Belluco Bamargo é nutricionista e educadora física do Instituto da Mulher de Piracicaba, dedicada à promoção da saúde, do bem-estar e da qualidade de vida de crianças, adolescentes e adultos. Seu trabalho integra orientação nutricional individualizada e cuidados com a atividade física, considerando as necessidades, a rotina e os objetivos de cada pessoa. Com uma abordagem personalizada e sem fórmulas prontas, incentiva hábitos saudáveis e escolhas conscientes, contribuindo para mais disposição, equilíbrio e saúde em todas as fases da vida.",
+    ],
   },
   {
     image: "/images/enfermeira.webp",
@@ -84,9 +87,10 @@ const professionals: Professional[] = [
     registration: "COREN-SP 513368",
     role: "Enfermeira",
     alt: "Deise Pessoa, enfermeira",
-    about: "A Enf. Deise Pessoa é enfermeira com pós-graduação em Obstetrícia e Ginecologia, especialista em Saúde da Mulher e da Criança, com formação em amamentação, do pré-natal ao desmame, e aconselhamento.",
-    work: "Também atua como laserterapeuta, com aplicação de taping no pré e pós-parto, além de realizar furo humanizado.\n\nCom 16 anos de experiência ao lado das famílias, Deise oferece um cuidado especializado, acolhedor e individualizado, acompanhando mulheres e famílias em diferentes fases da gestação, do puerpério e da jornada da amamentação.",
-    meaning: "Seu trabalho é pautado na escuta, na orientação e no respeito às necessidades de cada pessoa, proporcionando mais segurança, confiança e bem-estar em cada etapa dessa experiência tão especial.",
+    bio: [
+      "A Enf. Deise Pessoa é enfermeira com pós-graduação em Obstetrícia e Ginecologia, especialista em Saúde da Mulher e da Criança, com formação em amamentação, do pré-natal ao desmame, e aconselhamento. Também atua como laserterapeuta, com aplicação de taping no pré e pós-parto, além de realizar furo humanizado.",
+      "Com 16 anos de experiência ao lado das famílias, Deise oferece um cuidado especializado, acolhedor e individualizado, acompanhando mulheres e famílias em diferentes fases da gestação, do puerpério e da jornada da amamentação. Seu trabalho é pautado na escuta, na orientação e no respeito às necessidades de cada pessoa, proporcionando mais segurança, confiança e bem-estar em cada etapa dessa experiência tão especial.",
+    ],
   },
 ];
 
