@@ -39,7 +39,7 @@ const procedures = [
 
 const professionals: Professional[] = [
   {
-    image: "/images/medico.jpg",
+    image: "/images/equipe/eduardo.jpg",
     name: "Dr. Eduardo Henrique Salvador",
     registration: "CRM 111862",
     role: "Ginecologista e Obstetra",
@@ -49,7 +49,7 @@ const professionals: Professional[] = [
     ],
   },
   {
-    image: "/images/giuliana-vitti.jpg",
+    image: "/images/equipe/giuliana.jpg",
     name: "Dra. Giuliana Mazziero Vitti",
     registration: "CRM 108554",
     role: "Ginecologista e obstetra",
@@ -59,7 +59,7 @@ const professionals: Professional[] = [
     ],
   },
   {
-    image: "/images/ana-cristina.jpg",
+    image: "/images/equipe/ana-cristina.jpg",
     name: "Ana Cristina de Souza Vitor",
     registration: "CRP 06/158617",
     role: "Psicóloga e neuropsicóloga",
@@ -72,7 +72,7 @@ const professionals: Professional[] = [
     ],
   },
   {
-    image: "/images/kimberly.jpg",
+    image: "/images/equipe/kimberly.jpg",
     name: "Kimberly Machado Belluco",
     registration: "CRN 72717",
     role: "Nutricionista e educadora física",
