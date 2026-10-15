@@ -32,6 +32,7 @@ const services = [
 
 const procedures = [
   "Colocação e retirada de DIU",
+  "Colocação e retirada de Implanon",
   "Reposição hormonal",
   "Exame preventivo (rotina ginecológica, com foco na prevenção de doenças)",
   "Rotina ginecológica",
