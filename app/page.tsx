@@ -32,7 +32,7 @@ const services = [
 
 const procedures = [
   "Colocação e retirada de DIU",
-  "MCP Formal",
+  "Reposição hormonal",
   "Exame preventivo (rotina ginecológica, com foco na prevenção de doenças)",
   "Rotina ginecológica",
 ];
